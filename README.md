@@ -2,6 +2,22 @@
 
 Scheduling pairing tool for your remote team.
 
+# 💻  Contribute
+
+To get ready to start contributing:
+1. Download [Docker for mac](https://docs.docker.com/docker-for-mac/install/)
+2. Download [Kitematic](https://kitematic.com/)
+3. Install and run `Redis` from docker
+
+
+```bash
+$ git clone git@github.com:goldenson/pairwithme.git
+$ cd pairwithme
+$ bin/setup
+$ foreman start
+$ open http://localhost:5000
+```
+
 # Background & Research
 
 ---
