@@ -1,7 +1,7 @@
 class Service < ApplicationRecord
   belongs_to :user
 
-  %w{ facebook twitter github }.each do |provider|
+  %w{ facebook twitter github google_oauth2}.each do |provider|
     scope provider, ->{ where(provider: provider) }
   end
 
