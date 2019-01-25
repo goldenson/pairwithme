@@ -1,11 +1,10 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+maxime-shopify:
+  email: maxime.orefice@shopify.com
+  first_name: maxime
+  last_name: orefice
+  admin: true
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+maxime:
+  email: orefice.maxime@gmail.com
+  first_name: maxime
+  last_name: orefice

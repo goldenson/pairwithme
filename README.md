@@ -75,17 +75,17 @@ An app that schedules weekly pairing session with your team. Each week a random 
 
 ## Datebases:
 
-- [ ]  Users
+- [x]  Users
     - name
     - email
+- [x]  Agendas
+    - users
+    - timezone
 - [ ]  Pairings
     - subjects?
     - users
     - agendas
     - time
-- [ ]  Agendas
-    - users
-    - timezone
 
 ---
 
