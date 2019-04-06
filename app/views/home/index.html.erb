@@ -1,2 +1,12 @@
-<h1>Welcome to Jumpstart!</h1>
-<p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+<h1>Welcome to Pairwithme!</h1>
+<p class="lead">Let's take the time to know your team better.<br> Here the next 10 events of your calendar:</p>
+
+<% if @events.any? %>
+  <ul>
+    <% @events.each do |event| %>
+      <li>
+      <%= "#{event.summary} #{event.start.date || event.start.date_time}" %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
