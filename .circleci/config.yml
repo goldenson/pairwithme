@@ -31,6 +31,21 @@ jobs:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
+      - restore_cache:
+          keys:
+            - pairwithme-yarn-{{ checksum "yarn.lock" }}
+            - pairwithme-yarn-
+
+      - run:
+          name: Yarn Install
+          command: yarn install --cache-folder ~/.cache/yarn
+
+      # Store yarn / webpacker cache
+      - save_cache:
+          key: pairwithme-yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
       # Database setup
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
