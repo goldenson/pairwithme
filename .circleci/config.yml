@@ -3,10 +3,17 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.5.3-node-browsers
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+          PGHOST: 127.0.0.1
+          PGUSER: pairwithme
+          RAILS_ENV: test
       - image: circleci/postgres:9.6.7
         environment:
           POSTGRES_USER: pairwithme
-          POSTGRES_DB: pairwithme
+          POSTGRES_DB: pairwithme_test
           POSTGRES_PASSWORD: ""
 
     working_directory: ~/repo
