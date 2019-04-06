@@ -1,4 +1,4 @@
-# 🌍 Pairing scheduler software
+# 🌍 Pairing scheduler software [![CircleCI](https://circleci.com/gh/goldenson/pairwithme.svg?style=svg)](https://circleci.com/gh/goldenson/pairwithme)
 
 Scheduling pairing tool for your remote team.
 
