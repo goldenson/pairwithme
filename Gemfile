@@ -64,7 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'administrate', '~> 0.11.0'
 gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 gem 'data-confirm-modal', '~> 1.6', '>= 1.6.2'
-gem 'devise', '~> 4.4', '>= 4.4.3'
+gem 'devise', '~> 4.6'
 gem 'devise-bootstrapped', github: 'excid3/devise-bootstrapped', branch: 'bootstrap4'
 gem 'devise_masquerade', '~> 0.6.2'
 gem 'font-awesome-sass', '~> 5.5', '>= 5.5.0.1'
