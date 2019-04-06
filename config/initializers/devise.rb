@@ -270,7 +270,7 @@ Devise.setup do |config|
     config.omniauth :github, Rails.application.credentials.github_app_id, Rails.application.credentials.github_app_secret
   end
 
-  if Rails.application.credentials.google_app_id.present? && Rails.application.credentials.google_app_secret.present?
+  if Rails.application.credentials[Rails.env.to_sym][:google_app_id] && Rails.application.credentials[Rails.env.to_sym][:google_app_secret]
     config.omniauth :google_oauth2, Rails.application.credentials[Rails.env.to_sym][:google_app_id], Rails.application.credentials[Rails.env.to_sym][:google_app_secret]
   end
 
