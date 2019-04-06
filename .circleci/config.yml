@@ -16,8 +16,6 @@ jobs:
           POSTGRES_DB: pairwithme_test
           POSTGRES_PASSWORD: ""
 
-    working_directory: ~/repo
-
     steps:
       - checkout
 
@@ -62,10 +60,3 @@ jobs:
           name: run tests
           command: |
             bundle exec rake test
-
-      # collect reports
-      - store_test_results:
-          path: /tmp/test-results
-      - store_artifacts:
-          path: /tmp/test-results
-          destination: test-results
