@@ -1,7 +1,7 @@
 <h1>Welcome to Pairwithme!</h1>
 <p class="lead">Let's take the time to know your team better.<br> Here the next 10 events of your calendar:</p>
 
-<% if @events.any? %>
+<% if @events&.any? %>
   <ul>
     <% @events.each do |event| %>
       <li>
