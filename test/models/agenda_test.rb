@@ -5,12 +5,12 @@ class AgendaTest < ActiveSupport::TestCase
     agenda = Agenda.create(timezone: 'America/Toronto')
 
     assert_predicate agenda.errors.messages, :present?
-    assert_equal 1, agenda.errors.messages.size
+    assert_equal 2, agenda.errors.messages.size
     assert_equal :user, agenda.errors.messages.keys.first
   end
 
   test "#create without a timezone will not save agenda" do
-    agenda = Agenda.create(user: users(:maxime))
+    agenda = Agenda.create(user_id: users(:maxime).id)
 
     assert_predicate agenda.errors.messages, :present?
     assert_equal 1, agenda.errors.messages.size
@@ -21,8 +21,8 @@ class AgendaTest < ActiveSupport::TestCase
     agenda = Agenda.create
 
     assert_predicate agenda.errors.messages, :present?
-    assert_equal 2, agenda.errors.messages.size
-    assert_equal [:user, :timezone], agenda.errors.messages.keys
+    assert_equal 3, agenda.errors.messages.size
+    assert_equal [:user, :user_id, :timezone], agenda.errors.messages.keys
   end
 
   test "#create with a user and timezone will save agenda" do

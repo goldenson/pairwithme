@@ -7,5 +7,5 @@ class User < ApplicationRecord
 
   has_many :notifications, foreign_key: :recipient_id
   has_many :services
-  has_one :agenda
+  has_many :agendas, dependent: :destroy
 end

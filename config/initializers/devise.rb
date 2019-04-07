@@ -258,20 +258,28 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
-  if Rails.application.credentials.facebook_app_id.present? && Rails.application.credentials.facebook_app_secret.present?
-    config.omniauth :facebook, Rails.application.credentials.facebook_app_id, Rails.application.credentials.facebook_app_secret, scope: 'email,user_posts'
-  end
+  unless Rails.env.test?
+    if Rails.application.credentials.facebook_app_id.present? && Rails.application.credentials.facebook_app_secret.present?
+      config.omniauth :facebook, Rails.application.credentials.facebook_app_id, Rails.application.credentials.facebook_app_secret, scope: 'email,user_posts'
+    end
 
-  if Rails.application.credentials.twitter_app_id.present? && Rails.application.credentials.twitter_app_secret.present?
-    config.omniauth :twitter, Rails.application.credentials.twitter_app_id, Rails.application.credentials.twitter_app_secret
-  end
+    if Rails.application.credentials.twitter_app_id.present? && Rails.application.credentials.twitter_app_secret.present?
+      config.omniauth :twitter, Rails.application.credentials.twitter_app_id, Rails.application.credentials.twitter_app_secret
+    end
 
-  if Rails.application.credentials.github_app_id.present? && Rails.application.credentials.github_app_secret.present?
-    config.omniauth :github, Rails.application.credentials.github_app_id, Rails.application.credentials.github_app_secret
-  end
+    if Rails.application.credentials.github_app_id.present? && Rails.application.credentials.github_app_secret.present?
+      config.omniauth :github, Rails.application.credentials.github_app_id, Rails.application.credentials.github_app_secret
+    end
 
-  if Rails.application.credentials[Rails.env.to_sym][:google_app_id] && Rails.application.credentials[Rails.env.to_sym][:google_app_secret]
-    config.omniauth :google_oauth2, Rails.application.credentials[Rails.env.to_sym][:google_app_id], Rails.application.credentials[Rails.env.to_sym][:google_app_secret]
+    if Rails.application.credentials[Rails.env.to_sym][:google_app_id] && Rails.application.credentials[Rails.env.to_sym][:google_app_secret]
+      config.omniauth :google_oauth2,
+        Rails.application.credentials[Rails.env.to_sym][:google_app_id],
+        Rails.application.credentials[Rails.env.to_sym][:google_app_secret],
+        scope: 'userinfo.email, userinfo.profile, https://www.googleapis.com/auth/calendar',
+        prompt: 'select_account',
+        image_aspect_ratio: 'square',
+        image_size: 50
+    end
   end
 
   # ==> Warden configuration
