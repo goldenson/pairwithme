@@ -68,6 +68,7 @@ module Users
           uid: auth.uid,
           expires_at: expires_at,
           access_token: auth.credentials.token,
+          refresh_token: auth.credentials.refresh_token,
           access_token_secret: auth.credentials.secret,
       }
     end
