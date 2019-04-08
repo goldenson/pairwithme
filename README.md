@@ -97,3 +97,4 @@ An app that schedules weekly pairing session with your team. Each week a random 
 - https://readysteadycode.com/howto-integrate-google-calendar-with-rails
 - https://readysteadycode.com/howto-access-the-google-calendar-api-with-ruby
 - https://github.com/googleapis/signet
+- https://gist.github.com/GregBaugues/276d7c13e9f7a28db010

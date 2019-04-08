@@ -29,4 +29,19 @@ class Service < ApplicationRecord
   end
 
   def twitter_refresh_token!(token); end
+
+  def google_oauth2_refresh_token!(client)
+    params = {
+      refresh_token: refresh_token,
+      client_id: Rails.application.credentials[Rails.env.to_sym][:google_app_id],
+      client_secret: Rails.application.credentials[Rails.env.to_sym][:google_app_secret],
+      grant_type: 'refresh_token'
+    }
+
+    url = URI("https://accounts.google.com/o/oauth2/token")
+    response = Net::HTTP.post_form(url, params)
+    data = JSON.parse(response.body)
+
+    update(access_token: data['access_token'], expires_at: Time.now + data['expires_in'])
+  end
 end
