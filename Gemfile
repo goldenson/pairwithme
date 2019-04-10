@@ -69,7 +69,7 @@ gem 'devise-bootstrapped', github: 'excid3/devise-bootstrapped', branch: 'bootst
 gem 'devise_masquerade', '~> 0.6.2'
 gem 'font-awesome-sass', '~> 5.5', '>= 5.5.0.1'
 gem 'foreman', '~> 0.85.0'
-gem 'friendly_id', '~> 5.2', '>= 5.2.4'
+gem 'friendly_id', '~> 5.2'
 gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'local_time', '~> 2.0', '>= 2.0.1'
