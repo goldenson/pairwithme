@@ -18,10 +18,4 @@ class GoogleCalendar
 
     response.items
   end
-
-  def update_agenda
-    calendar_data = @service.get_calendar('primary')
-
-    @user.agendas.find_or_create_by!(timezone: calendar_data.time_zone)
-  end
 end
