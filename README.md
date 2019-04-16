@@ -50,9 +50,9 @@ An app that schedules weekly pairing session with your team. Each week a random 
 
 ---
 
-- [ ]  Ask you with who you want to pair with
+- [ ]  Pick a random folks to pair with
 - [ ]  Ask what you want to pair
-- [ ]  Book a time slot together in agenda
+- [ ]  Book a time slot together
 - [ ]  Send reminder before the pairing session
 
 ## Nice to have features later:
@@ -78,13 +78,9 @@ An app that schedules weekly pairing session with your team. Each week a random 
 - [x]  Users
     - name
     - email
-- [x]  Agendas
-    - users
-    - timezone
 - [ ]  Pairings
     - subjects?
     - users
-    - agendas
     - time
 
 ---
