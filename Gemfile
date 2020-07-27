@@ -79,7 +79,7 @@ gem 'omniauth-facebook', '~> 5.0'
 gem 'omniauth-github', '~> 1.3'
 gem 'omniauth-twitter', '~> 1.4'
 gem 'omniauth-google-oauth2', '~> 0.6.1'
-gem 'sidekiq', '~> 5.2'
+gem 'sidekiq', '~> 6.1'
 gem 'sitemap_generator', '~> 6.0'
 gem 'webpacker', '~> 3.5', '>= 3.5.3'
 gem 'whenever', require: false
